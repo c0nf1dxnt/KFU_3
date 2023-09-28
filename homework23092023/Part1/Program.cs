@@ -11,7 +11,7 @@ namespace Part1
             try
             {
                 Console.Write("Введите число: ");
-                ushort day = Convert.ToUInt16(Console.ReadLine());
+                short day = Convert.ToInt16(Console.ReadLine());
                 DateTime date = new DateTime(1, 1, 1).AddDays(day - 1);
                 switch (date.Month)
                 {
@@ -49,7 +49,7 @@ namespace Part1
                         Console.WriteLine($"Дата: {date.Day} ноября\n");
                         break;
                     case 12:
-                        Console.WriteLine($"Дата: {date.Day} декабря");
+                        Console.WriteLine($"Дата: {date.Day} декабря\n");
                         break;
                 }
             }
@@ -64,11 +64,11 @@ namespace Part1
         }
         static void Task2()
         {
-            Console.WriteLine("Задание №2\nСчитать с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение, в случае если число меньше 1 или больше 365");
+            Console.WriteLine("Задание №2\nСчитать с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение,\n в случае если число меньше 1 или больше 365");
             try
             {
                 Console.Write("Введите число: ");
-                ushort day = Convert.ToUInt16(Console.ReadLine());
+                short day = Convert.ToInt16(Console.ReadLine());
                 DateTime date = new DateTime(2023, 1, 1).AddDays(day - 1);
                 if (day < 1 || day > 365)
                 {
@@ -110,7 +110,7 @@ namespace Part1
                         Console.WriteLine($"Дата: {date.Day} ноября\n");
                         break;
                     case 12:
-                        Console.WriteLine($"Дата: {date.Day} декабря");
+                        Console.WriteLine($"Дата: {date.Day} декабря\n");
                         break;
                 }
             }
@@ -125,11 +125,11 @@ namespace Part1
         }
         static void Task3()
         {
-            Console.WriteLine("Задание №3\nть с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение, в случае если число меньше 1 или больше 365, а также считать год с экрана и учитывать его високосность в вычислениях");
+            Console.WriteLine("Задание №3\nСчитать с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение,\n в случае если число меньше 1 или больше 365, а также считать год с экрана и учитывать его високосность в вычислениях");
             try
             {
                 Console.Write("Введите число: ");
-                ushort day = Convert.ToUInt16(Console.ReadLine());
+                short day = Convert.ToInt16(Console.ReadLine());
                 Console.Write("Введите год: ");
                 ushort year = Convert.ToUInt16(Console.ReadLine());
                 DateTime date = new DateTime(year, 1, 1).AddDays(day - 1);
@@ -173,7 +173,7 @@ namespace Part1
                         Console.WriteLine($"Дата: {date.Day} ноября\n");
                         break;
                     case 12:
-                        Console.WriteLine($"Дата: {date.Day} декабря");
+                        Console.WriteLine($"Дата: {date.Day} декабря\n");
                         break;
                 }
             }
