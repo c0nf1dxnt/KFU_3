@@ -7,11 +7,11 @@ namespace Part1
     {
         static void Task1()
         {
-            Console.WriteLine("Задание №1\nНеобходимо ввести число в интервале [1,365] и вывести соответствующую ему дату (день и месяц)");
+            Console.WriteLine("Задание №1\nСчитать с экрана число от 1 до 365 и перевести его в месяц и день месяца");
             try
             {
                 Console.Write("Введите число: ");
-                int day = Convert.ToInt32(Console.ReadLine());
+                ushort day = Convert.ToUInt16(Console.ReadLine());
                 DateTime date = new DateTime(1, 1, 1).AddDays(day - 1);
                 switch (date.Month)
                 {
@@ -59,16 +59,16 @@ namespace Part1
             }
             catch (System.ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Введено число, не принадлежащее интервалу [1,365]!\n");
+                Console.WriteLine("Введённое число не принадлежит интервалу [1;365]!\n"); ;
             }
         }
         static void Task2()
         {
-            Console.WriteLine("Задание №2\nНеобходимо ввести число в интервале [1,365] и вывести соответствующую ему дату (день и месяц),\nесли число меньше 1 или больше 365, программа должна вырабатывать исключение");
+            Console.WriteLine("Задание №2\nСчитать с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение, в случае если число меньше 1 или больше 365");
             try
             {
                 Console.Write("Введите число: ");
-                int day = Convert.ToInt32(Console.ReadLine());
+                ushort day = Convert.ToUInt16(Console.ReadLine());
                 DateTime date = new DateTime(2023, 1, 1).AddDays(day - 1);
                 if (day < 1 || day > 365)
                 {
@@ -120,20 +120,20 @@ namespace Part1
             }
             catch (System.ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Введено число, не принадлежащее интервалу [1,365]!\n");
+                Console.WriteLine("Введённое число не принадлежит интервалу [1;365]!\n");
             }
         }
         static void Task3()
         {
-            Console.WriteLine("Задание №2\nНеобходимо ввести число в интервале [1,365] и вывести соответствующую ему дату (день и месяц),\nесли число меньше 1 или больше 365, программа должна вырабатывать исключение");
+            Console.WriteLine("Задание №3\nть с экрана число от 1 до 365 и перевести его в месяц и день месяца, а также обработать исключение, в случае если число меньше 1 или больше 365, а также считать год с экрана и учитывать его високосность в вычислениях");
             try
             {
                 Console.Write("Введите число: ");
-                int day = Convert.ToInt32(Console.ReadLine());
+                ushort day = Convert.ToUInt16(Console.ReadLine());
                 Console.Write("Введите год: ");
-                int year = Convert.ToInt32(Console.ReadLine());
+                ushort year = Convert.ToUInt16(Console.ReadLine());
                 DateTime date = new DateTime(year, 1, 1).AddDays(day - 1);
-                if (day < 1 || day > 365)
+                if (day < 1 || day > 365 && !DateTime.IsLeapYear(year))
                 {
                     throw new System.ArgumentOutOfRangeException();
                 }
@@ -183,10 +183,11 @@ namespace Part1
             }
             catch (System.ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Введено число, не принадлежащее интервалу [1,365]!\n");
+                Console.WriteLine("Введённое число не принадлежит интервалу [1;365]!\n");
             }
+
         }
-        static void Main(string[] args)
+        static void Main()
         {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
